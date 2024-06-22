@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=5 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
-[ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="2_l40qo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
 texture = ExtResource("1_byxwv")
@@ -146,27 +145,12 @@ texture = ExtResource("1_byxwv")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-22:9/size_in_atlas = Vector2i(3, 3)
-22:9/0 = 0
-22:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-22:9/0/physics_layer_0/angular_velocity = 0.0
-22:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.1473, -20.8597, 1.94455, -24.7487, 17.8544, -19.0919, 24.572, -4.94975, 19.9758, 10.9602, 10.0763, 18.0312, -9.36916, 17.3241, -21.7435, 7.42462, -23.8649, -4.5962)
-25:9/size_in_atlas = Vector2i(3, 3)
-25:9/0 = 0
-25:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-25:9/0/physics_layer_0/angular_velocity = 0.0
-25:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.1473, -20.8597, 1.94455, -24.7487, 17.8544, -19.0919, 24.572, -4.94975, 19.9758, 10.9602, 10.0763, 18.0312, -9.36916, 17.3241, -21.7435, 7.42462, -23.8649, -4.5962)
-28:9/size_in_atlas = Vector2i(3, 3)
-28:9/0 = 0
-28:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-28:9/0/physics_layer_0/angular_velocity = 0.0
-28:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.1473, -20.8597, 1.94455, -24.7487, 17.8544, -19.0919, 24.572, -4.94975, 19.9758, 10.9602, 10.0763, 18.0312, -9.36916, 17.3241, -21.7435, 7.42462, -23.8649, -4.5962)
 35:8/size_in_atlas = Vector2i(2, 2)
 35:8/0 = 0
 35:8/0/y_sort_origin = 8
 35:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 35:8/0/physics_layer_0/angular_velocity = 0.0
-35:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20.3293, -6.71752, 19.9758, -7.42462, 20.6829, 10.6066, -20.3293, 10.9602)
+35:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.625, -9, 11.625, -9, 12.125, 12, -11.625, 11.75)
 11:28/0 = 0
 11:28/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:28/0/physics_layer_0/angular_velocity = 0.0
@@ -289,14 +273,23 @@ texture = ExtResource("1_byxwv")
 3:5/0 = 0
 3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:5/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8qao"]
-texture = ExtResource("2_l40qo")
+8:31/size_in_atlas = Vector2i(2, 3)
+8:31/0 = 0
+8:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:31/0/physics_layer_0/angular_velocity = 0.0
+22:9/size_in_atlas = Vector2i(3, 3)
+22:9/animation_speed = 3.0
+22:9/animation_frame_0/duration = 1.0
+22:9/animation_frame_1/duration = 1.0
+22:9/animation_frame_2/duration = 1.0
+22:9/0 = 0
+22:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+22:9/0/physics_layer_0/angular_velocity = 0.0
+22:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.375, -3.75, -18.625, -16.75, -2.375, -23.5, 15.875, -20.25, 23.375, -9.75, 23.375, 6.75, 11.875, 18, -3.625, 19.25, -17.625, 12)
 
 [sub_resource type="TileSet" id="TileSet_gqblq"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0p77d")
-sources/1 = SubResource("TileSetAtlasSource_d8qao")
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
@@ -312,7 +305,7 @@ layer_1/name = "cliff"
 layer_1/tile_data = PackedInt32Array()
 layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
-layer_2/tile_data = PackedInt32Array(1245202, 2293760, 8, 1245204, 2293760, 8, 1245206, 2293760, 8, 1245208, 2293760, 8, 262183, 2031616, 3, 262175, 2031616, 3, 327715, 2031616, 3, 196634, 2031616, 3, 262161, 2031616, 3, 327689, 2031616, 3, 131117, 2031616, 3, 458771, 2293760, 2, 1245198, 2097152, 1, 1245211, 2097152, 1, 1245217, 2097152, 1, 1245227, 2097152, 1, 196621, 393216, 0, 65571, 393216, 0, 917515, 720896, 0, 917529, 720896, 0, 262198, 1835008, 4, 393276, 1769472, 4, 458801, 1703936, 4, 131104, 851968, 5, 720950, 1835008, 6, 524342, 1835008, 9)
+layer_2/tile_data = PackedInt32Array(1245202, 2293760, 8, 1245204, 2293760, 8, 1245206, 2293760, 8, 1245208, 2293760, 8, 262183, 2031616, 3, 262175, 2031616, 3, 327715, 2031616, 3, 196634, 2031616, 3, 262161, 2031616, 3, 327689, 2031616, 3, 131117, 2031616, 3, 458771, 2293760, 2, 1245198, 2097152, 1, 1245211, 2097152, 1, 1245217, 2097152, 1, 1245227, 2097152, 1, 196621, 393216, 0, 65571, 393216, 0, 917515, 720896, 0, 917529, 720896, 0, 262198, 1835008, 4, 393276, 1769472, 4, 131104, 851968, 5, 720950, 1835008, 6, 458801, 1703936, 4, 458806, 1441792, 9)
 
 [node name="Player" parent="." instance=ExtResource("1_fyb5w")]
 position = Vector2(135, 130)
