@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://mkmo71jx6mgx"]
+
+[ext_resource type="Script" path="res://scripts/muladhara.gd" id="1_4ijpc"]
+[ext_resource type="Texture2D" uid="uid://cics3cd4i6le5" path="res://assets/Abuelasprite/abuela.png" id="1_kjhit"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nikr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kjhit")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mpj61"]
+radius = 32.0
+
+[node name="Muladhara" type="CharacterBody2D"]
+script = ExtResource("1_4ijpc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, -1)
+scale = Vector2(0.0194257, 0.0219595)
+sprite_frames = SubResource("SpriteFrames_5nikr")
+
+[node name="ChatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetection"]
+shape = SubResource("CircleShape2D_mpj61")
+
+[connection signal="body_entered" from="ChatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="ChatDetection" to="." method="_on_chat_detection_body_exited"]
