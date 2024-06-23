@@ -22,7 +22,10 @@ GameManager="*res://scripts/game_manager.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Muladhara": "res://Dialogic/Personajes/Muladhara.dch",
+"Yin": "res://Dialogic/Personajes/Yin.dch"
+}
 directories/dtl_directory={}
 glossary/default_case_sensitive=true
 layout/style_list=[]
@@ -48,6 +51,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+<<<<<<<Updatedupstreamdirectories/dch_directory={}
 
 [editor_plugins]
 
