@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=7 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
+[ext_resource type="Script" path="res://scripts/entrada_casa_test.gd" id="1_ec0g4"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0vdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
 texture = ExtResource("1_byxwv")
@@ -294,6 +297,14 @@ sources/0 = SubResource("TileSetAtlasSource_0p77d")
 [node name="main" type="Node2D"]
 y_sort_enabled = true
 
+[node name="entrada_casa_test" type="Area2D" parent="."]
+position = Vector2(-2, -1)
+script = ExtResource("1_ec0g4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entrada_casa_test"]
+position = Vector2(217, 85)
+shape = SubResource("RectangleShape2D_j0vdm")
+
 [node name="TileMap" type="TileMap" parent="."]
 self_modulate = Color(0.0901961, 0.211765, 0.392157, 1)
 y_sort_enabled = true
@@ -305,7 +316,9 @@ layer_1/name = "cliff"
 layer_1/tile_data = PackedInt32Array()
 layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
-layer_2/tile_data = PackedInt32Array(1245202, 2293760, 8, 1245204, 2293760, 8, 1245206, 2293760, 8, 1245208, 2293760, 8, 262183, 2031616, 3, 262175, 2031616, 3, 327715, 2031616, 3, 196634, 2031616, 3, 262161, 2031616, 3, 327689, 2031616, 3, 131117, 2031616, 3, 458771, 2293760, 2, 1245198, 2097152, 1, 1245211, 2097152, 1, 1245217, 2097152, 1, 1245227, 2097152, 1, 196621, 393216, 0, 65571, 393216, 0, 917515, 720896, 0, 917529, 720896, 0, 262198, 1835008, 4, 393276, 1769472, 4, 131104, 851968, 5, 720950, 1835008, 6, 458801, 1703936, 4, 458806, 1441792, 9)
+layer_2/tile_data = PackedInt32Array(1245202, 2293760, 8, 1245204, 2293760, 8, 1245206, 2293760, 8, 1245208, 2293760, 8, 262183, 2031616, 3, 262175, 2031616, 3, 327715, 2031616, 3, 196634, 2031616, 3, 262161, 2031616, 3, 327689, 2031616, 3, 131117, 2031616, 3, 458771, 2293760, 2, 1245198, 2097152, 1, 1245211, 2097152, 1, 1245217, 2097152, 1, 1245227, 2097152, 1, 196621, 393216, 0, 65571, 393216, 0, 917515, 720896, 0, 917529, 720896, 0, 393276, 1769472, 4, 131104, 851968, 5, 720950, 1835008, 6, 458801, 1703936, 4, 458806, 1441792, 9, 196662, 1835008, 4)
 
 [node name="Player" parent="." instance=ExtResource("1_fyb5w")]
 position = Vector2(135, 130)
+
+[connection signal="body_entered" from="entrada_casa_test" to="entrada_casa_test" method="_on_body_entered"]
