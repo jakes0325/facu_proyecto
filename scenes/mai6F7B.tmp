@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=7 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
+[ext_resource type="Script" path="res://scripts/entrada_casa_test.gd" id="1_ec0g4"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
-[ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0vdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
 texture = ExtResource("1_byxwv")
@@ -373,11 +375,15 @@ texture = ExtResource("1_byxwv")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0p77d")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yqn8"]
-size = Vector2(20, 14)
-
 [node name="main" type="Node2D"]
 y_sort_enabled = true
+
+[node name="entrada_casa_test" type="Area2D" parent="."]
+script = ExtResource("1_ec0g4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entrada_casa_test"]
+position = Vector2(568, 52)
+shape = SubResource("RectangleShape2D_j0vdm")
 
 [node name="TileMap" type="TileMap" parent="."]
 self_modulate = Color(0.0901961, 0.211765, 0.392157, 1)
@@ -395,8 +401,4 @@ layer_2/tile_data = PackedInt32Array(196634, 2031616, 3, 262161, 2031616, 3, 327
 [node name="Player" parent="." instance=ExtResource("1_fyb5w")]
 position = Vector2(135, 130)
 
-[node name="SceneTrigger" parent="." instance=ExtResource("3_iyrlh")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(568, 46)
-shape = SubResource("RectangleShape2D_8yqn8")
+[connection signal="body_entered" from="entrada_casa_test" to="entrada_casa_test" method="_on_body_entered"]
