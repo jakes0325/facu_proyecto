@@ -26,7 +26,9 @@ directories/dch_directory={
 "Muladhara": "res://Dialogic/Personajes/Muladhara.dch",
 "Yin": "res://Dialogic/Personajes/Yin.dch"
 }
-directories/dtl_directory={}
+directories/dtl_directory={
+"PrimeraMision": "res://Dialogic/Timeline/PrimeraMision.dtl"
+}
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style="Default"

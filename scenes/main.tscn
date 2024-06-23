@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=7 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
