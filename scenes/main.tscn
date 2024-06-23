@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=9 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
 [ext_resource type="Script" path="res://scripts/entrada_casa_test.gd" id="1_ec0g4"]
@@ -294,6 +294,17 @@ texture = ExtResource("1_byxwv")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0p77d")
 
+[sub_resource type="Gradient" id="Gradient_0mbxr"]
+colors = PackedColorArray(1, 0.52549, 0.231373, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mkhkc"]
+gradient = SubResource("Gradient_0mbxr")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.844037, 0.752294)
+
 [node name="main" type="Node2D"]
 y_sort_enabled = true
 
@@ -304,6 +315,7 @@ script = ExtResource("1_ec0g4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entrada_casa_test"]
 position = Vector2(217, 85)
 shape = SubResource("RectangleShape2D_j0vdm")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="TileMap" type="TileMap" parent="."]
 self_modulate = Color(0.0901961, 0.211765, 0.392157, 1)
@@ -320,5 +332,10 @@ layer_2/tile_data = PackedInt32Array(1245202, 2293760, 8, 1245204, 2293760, 8, 1
 
 [node name="Player" parent="." instance=ExtResource("1_fyb5w")]
 position = Vector2(135, 130)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(237, 117)
+energy = 3.74
+texture = SubResource("GradientTexture2D_mkhkc")
 
 [connection signal="body_entered" from="entrada_casa_test" to="entrada_casa_test" method="_on_body_entered"]
