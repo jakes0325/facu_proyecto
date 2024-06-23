@@ -65,3 +65,5 @@ func play_anim(movement) -> void:
 			elif movement == 0:
 				anim.play("back_idle")
 
+func player():
+	pass
