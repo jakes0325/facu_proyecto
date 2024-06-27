@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=10 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
 [ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="2_xjlam"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
+[ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
+[ext_resource type="Script" path="res://scripts/Followcam.gd" id="5_fcs5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
 texture = ExtResource("1_byxwv")
@@ -1194,3 +1195,11 @@ position = Vector2(135, 130)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(568, 46)
 shape = SubResource("RectangleShape2D_8yqn8")
+
+[node name="Followcam" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node", "tilemap")]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("5_fcs5j")
+follow_node = NodePath("../Player")
+tilemap = NodePath("../TileMap")
