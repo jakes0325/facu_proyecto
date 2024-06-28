@@ -1,16 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2sswpfjswqm5"]
-
-[sub_resource type="GDScript" id="GDScript_m50uo"]
-script/source = "extends Area2D
-
-var connected_sceme: String
-var scenes_folder = \"res://scenes/\"
-
-
-func _on_body_entered(body):
-	pass
-	
-"
+[gd_scene format=3 uid="uid://b86dxfulukk4o"]
 
 [node name="SceneTrigger" type="Area2D"]
 collision_layer = 0
