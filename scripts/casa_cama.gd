@@ -9,8 +9,6 @@ func _process(delta):
 	change_scene()
 
 
-		
-		
 func change_scene() -> void:
 	if GameManager.transition_scenes == true:
 		if GameManager.current_sceen == "house":
