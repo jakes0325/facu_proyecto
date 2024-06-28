@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=14 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_5sjkm"]
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
 [ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="2_xjlam"]
-[ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
+[ext_resource type="PackedScene" uid="uid://b2sswpfjswqm5" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
 [ext_resource type="Script" path="res://scripts/Followcam.gd" id="5_fcs5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
@@ -1172,6 +1172,26 @@ sources/1 = SubResource("TileSetAtlasSource_5ynro")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yqn8"]
 size = Vector2(20, 14)
 
+[sub_resource type="Environment" id="Environment_hraj4"]
+background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.14
+glow_bloom = 0.16
+glow_blend_mode = 0
+
+[sub_resource type="Gradient" id="Gradient_0gn30"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vwney"]
+gradient = SubResource("Gradient_0gn30")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.463303)
+fill_to = Vector2(0.880734, 0.178899)
+
 [node name="main" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_5sjkm")
@@ -1215,5 +1235,42 @@ tilemap = NodePath("../TileMap")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
 polygon = PackedVector2Array(-1, -1, 1039, 1, 1039, 336, 388, 336, 388, 251, 269, 251, 268, 337, 0, 336, 0, 18, -66, 377, 436, 412, 1212, 400, 1052, -145, 178, -121, -39, -28, -1, 24)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hraj4")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.176471, 0.176471, 0.176471, 1)
+blend_mode = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(155, 117)
+color = Color(0.870588, 0.188235, 0, 1)
+energy = 5.11
+texture = SubResource("GradientTexture2D_vwney")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(220, 282)
+color = Color(0.870588, 0.188235, 0, 1)
+energy = 5.11
+texture = SubResource("GradientTexture2D_vwney")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(438, 289)
+color = Color(0.870588, 0.188235, 0, 1)
+energy = 5.11
+texture = SubResource("GradientTexture2D_vwney")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(770, 135)
+color = Color(0.870588, 0.188235, 0, 1)
+energy = 5.11
+texture = SubResource("GradientTexture2D_vwney")
+
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+position = Vector2(566, 74)
+color = Color(0.870588, 0.188235, 0, 1)
+energy = 5.11
+texture = SubResource("GradientTexture2D_vwney")
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
