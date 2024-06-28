@@ -1,13 +1,22 @@
+
 extends Node
 
-var player: CharacterBody2D
-var scenes_path : String = "res://scenes/"
+var current_sceen = "world" #world cliff-side
+var transition_scenes = false
+
+var player_exit_cliffside_posx = 0
+var player_exit_cliffside_posy = 0
+var player_start_posx = 0
+var player_start_posy = 0
 
 
-func change_scene(from, to_scene_name : String) -> void:
-	player = from.player
-	player.get_parent().remove_child(player)
-	var fullpath = scenes_path + to_scene_name + "tscn"
-	from.get_tree().call_deferred("change_scene_to_file", fullpath)
+func finish_changescene() -> void:
+	if transition_scenes == true: #este if creo q esta demas
+		transition_scenes = false
+		if current_sceen == "world":
+			current_sceen = "cliff_side"
+		else:
+			current_sceen = "world"
+ 
 
 

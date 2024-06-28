@@ -1203,3 +1203,8 @@ position_smoothing_speed = 2.0
 script = ExtResource("5_fcs5j")
 follow_node = NodePath("../Player")
 tilemap = NodePath("../TileMap")
+
+[node name="collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
+polygon = PackedVector2Array(-1, -1, 1039, 1, 1039, 336, 388, 336, 388, 251, 269, 251, 268, 337, 0, 336, 0, 18, -66, 377, 436, 412, 1212, 400, 1052, -145, 178, -121, -39, -28, -1, 24)

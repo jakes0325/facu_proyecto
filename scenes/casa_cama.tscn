@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://yjr01cpeaxmr"]
+[gd_scene load_steps=6 format=3 uid="uid://yjr01cpeaxmr"]
 
 [ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="1_gsgb4"]
+[ext_resource type="Script" path="res://scripts/casa_cama.gd" id="1_khjxr"]
+[ext_resource type="Script" path="res://scripts/Followcam.gd" id="2_evbbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ltjsb"]
 texture = ExtResource("1_gsgb4")
@@ -314,6 +316,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ltjsb")
 
 [node name="casa_cama" type="Node2D"]
+script = ExtResource("1_khjxr")
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0.219608, 0.419608, 0.721569, 1)
@@ -325,3 +328,7 @@ layer_1/name = "ysort"
 layer_1/tile_data = PackedInt32Array(196625, 1310720, 1, 262153, 65536, 0, 17, 589824, 4, 9, 589824, 4, 1, 589824, 4, 65549, 393216, 9, 327683, 851968, 1, 524308, 524288, 12, 524307, 524288, 12, 524306, 524288, 12, 327681, 1048576, 4, 458755, 1114112, 4, 19, 131072, 10, 7, 262144, 15, 11, 262144, 15, 20, 262144, 15, 196611, 983040, 4, 65541, 655360, 7)
 layer_2/name = "cositas"
 layer_2/tile_data = PackedInt32Array(262147, 917504, 6, 327683, 720896, 6, 65540, 589824, 10, 65541, 589824, 11, 65542, 589824, 10)
+
+[node name="Followcam" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap")]
+script = ExtResource("2_evbbx")
+tilemap = NodePath("../TileMap")
