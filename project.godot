@@ -55,6 +55,10 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 <<<<<<<Updatedupstreamdirectories/dch_directory={}
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")

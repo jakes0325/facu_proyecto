@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var chatting :bool = false
 var player_in_area= false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,11 +9,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if player_in_area:
-		if Input.is_action_just_pressed("e"):
+		if Input.is_action_just_pressed("e"): #and chatting == false
 			run_dialogue("PrimeraMision")
+			#chatting = false
+			player_in_area= false
+			
 
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
+	#chatting= true
 	
 	
 func _on_chat_detection_body_entered(body):
