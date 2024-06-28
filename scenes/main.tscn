@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=11 format=3 uid="uid://igsra1k50xs4"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_5sjkm"]
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
 [ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="2_xjlam"]
@@ -1173,6 +1174,7 @@ size = Vector2(20, 14)
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_5sjkm")
 
 [node name="TileMap" type="TileMap" parent="."]
 self_modulate = Color(0.0901961, 0.211765, 0.392157, 1)
@@ -1191,6 +1193,7 @@ layer_2/tile_data = PackedInt32Array(196634, 2031616, 3, 262161, 2031616, 3, 327
 position = Vector2(135, 130)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("3_iyrlh")]
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(568, 46)
@@ -1208,3 +1211,5 @@ tilemap = NodePath("../TileMap")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
 polygon = PackedVector2Array(-1, -1, 1039, 1, 1039, 336, 388, 336, 388, 251, 269, 251, 268, 337, 0, 336, 0, 18, -66, 377, 436, 412, 1212, 400, 1052, -145, 178, -121, -39, -28, -1, 24)
+
+[connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
