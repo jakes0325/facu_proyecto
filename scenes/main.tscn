@@ -1201,6 +1201,10 @@ shape = SubResource("RectangleShape2D_8yqn8")
 
 [node name="Followcam" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node", "tilemap")]
 zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 1039
+limit_bottom = 336
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("5_fcs5j")
