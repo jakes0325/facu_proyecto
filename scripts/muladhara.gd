@@ -9,15 +9,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if player_in_area:
+		if Input.is_action_just_pressed("e") and GameManager.chatting == false:
 			run_dialogue("PrimeraMision")
-			#chatting = false
-			player_in_area= false
+			
 			
 
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
-	#chatting= true
-	
 	on_chat()
 	
 func _on_chat_detection_body_entered(body):
