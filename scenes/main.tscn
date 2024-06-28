@@ -1190,10 +1190,9 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(196634, 2031616, 3, 262161, 2031616, 3, 327689, 2031616, 3, 131117, 2031616, 3, 458771, 2293760, 2, 1245198, 2097152, 1, 1245211, 2097152, 1, 1245217, 2097152, 1, 1245227, 2097152, 1, 65571, 393216, 0, 393276, 1769472, 4, 131104, 851968, 5, 720950, 1835008, 6, 458801, 1703936, 4, 458806, 1441792, 9, 196662, 1835008, 4)
 
 [node name="Player" parent="." instance=ExtResource("1_fyb5w")]
-position = Vector2(135, 130)
+position = Vector2(568, 69)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("3_iyrlh")]
-script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(568, 46)

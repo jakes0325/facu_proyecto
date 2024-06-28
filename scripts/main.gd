@@ -3,7 +3,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if GameManager.game_first_loadin == true:
+		$Player.position.x = GameManager.player_start_posx
+		$Player.position.y = GameManager.player_start_posy
+	else:
+		$Player.position.x = GameManager.player_exit_cliffside_posx
+		$Player.position.y = GameManager.player_exit_cliffside_posy
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
