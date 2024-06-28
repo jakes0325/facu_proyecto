@@ -26,5 +26,6 @@ func change_scene() -> void:
 	if GameManager.transition_scenes == true:
 		if GameManager.current_sceen == "world":
 			get_tree().change_scene_to_file("res://scenes/casa_cama.tscn")
+			GameManager.game_first_loadin = false
 			GameManager.finish_changescene()
 
