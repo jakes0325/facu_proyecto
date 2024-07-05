@@ -3,6 +3,7 @@ extends Node
 
 var current_sceen = "world" #world cliff-side
 var transition_scenes = false
+var chatting:bool = false
 
 var player_exit_cliffside_posx = 568
 var player_exit_cliffside_posy = 69

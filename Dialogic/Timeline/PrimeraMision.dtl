@@ -22,5 +22,6 @@ leave Muladhara
 join Yin 1
 Yin: (sonriendo) Mi conexión con el mundo es profunda. Te ayudare en esta búsqueda. Juntas restauraremos tu equilibrio.
 leave Yin
-Y asi Yin abrió la puerta y salió, adentrándose en los recuerdos de Muladhara, donde encontró en un largo \
-laberinto sin fin, donde cada esquina parecía llevarlo más profundamente en la mente de la mujer.
+Y asi Yin abrió la puerta y salió, adentrándose en los recuerdos de Muladhara.
+[signal arg="end_chatting"]
+[signal arg="start_mission"]
