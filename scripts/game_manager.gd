@@ -15,7 +15,7 @@ var player_start_posx = 122  # house.x = 568  --  forest.x = 727
 var player_start_posy = 155  # house.y = 69   --  forest.y = 319
 
 var game_first_loadin = true
-
+var bosque_mente_first_loadin = true
 
 func finish_changescene() -> void:
 	if transition_scenes == true: #este if creo q esta demas
