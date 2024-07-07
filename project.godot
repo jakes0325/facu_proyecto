@@ -27,6 +27,7 @@ directories/dch_directory={
 "Yin": "res://Dialogic/Personajes/Yin.dch"
 }
 directories/dtl_directory={
+"Fin_Primera_Mision": "res://Dialogic/Timeline/Fin_Primera_Mision.dtl",
 "Introduccion": "res://Dialogic/Timeline/Introduccion.dtl",
 "Introduccion_Bosque_Mente": "res://Dialogic/Timeline/Introduccion_Bosque_Mente.dtl",
 "PrimeraMision": "res://Dialogic/Timeline/PrimeraMision.dtl",

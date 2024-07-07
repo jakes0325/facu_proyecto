@@ -1,4 +1,4 @@
 join Yin 2 [animation="Fade In Out" mirrored="true"]
-Nuestra protagonista se llama Yin. una chica mitad gato y mitad humana. con una habilidad de transportarse a un plano astral, con el fin de ayudar a los demas
+Yin: Nuestra protagonista se llama Yin. una chica mitad gato y mitad humana. con una habilidad de transportarse a un plano astral, con el fin de ayudar a los demas
 leave Yin [animation="Fade In Out"]
 [signal arg="end_chatting"]
