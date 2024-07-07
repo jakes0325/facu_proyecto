@@ -29,6 +29,7 @@ animations = [{
 radius = 100.0
 
 [node name="enemy" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_cix6c")
 bullet_node = ExtResource("2_3ydhe")
 
@@ -52,6 +53,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 unique_name_in_owner = true

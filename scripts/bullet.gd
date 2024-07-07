@@ -22,4 +22,5 @@ func _on_screen_exited():
 
 
 func _on_body_entered(body):
-	body.set_status(bullet_type)
+	if body.is_in_group("player"):
+		body.set_status(bullet_type)

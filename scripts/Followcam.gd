@@ -14,4 +14,5 @@ func _ready():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	global_position = follow_node.global_position
+	if GameManager.dead == false: 
+		global_position = follow_node.global_position

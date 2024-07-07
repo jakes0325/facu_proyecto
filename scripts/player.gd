@@ -106,6 +106,7 @@ func slow():
 	SPEED = 100
 
 func died():
+	GameManager.dead = true
 	queue_free() 
 
 func stun():

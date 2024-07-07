@@ -3,8 +3,11 @@ extends Node2D
 #var scene_name: String
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	#Dialogic.signal_event.connect(end_chatting)
+	#if GameManager.game_first_loadin == true:
+		#Dialogic.start("Introduccion")
+		#GameManager.chatting = true
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

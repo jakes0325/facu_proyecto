@@ -4,7 +4,7 @@ var scene_name: String
 var current_sceen = "world" #world cliff-side forest
 var transition_scenes = false
 var chatting:bool = false
-
+var dead:bool = false
 #var player_exit_house_posx = 568
 #var player_exit_house_posy = 69
 #
