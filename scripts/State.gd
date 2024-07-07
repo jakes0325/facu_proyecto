@@ -5,6 +5,7 @@ class_name State
 @onready var player = owner.get_parent().find_child("Player")
 @onready var speed = owner.find_child("speed")
 @onready var duration = owner.find_child("Duration")
+@onready var end_battle = owner.find_child("end_battle")
 
 var can_transition: bool = false
 

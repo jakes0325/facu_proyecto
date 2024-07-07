@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var current_dir: String = "down"
-var  SPEED:int = 200
+var  SPEED:int = 150
 
 @onready var debug = $debug
 @onready var progress_bar = $ProgressBar
@@ -94,12 +94,14 @@ func player():
 
 func fire():
 	debug.text = "fire"
-	health -= 10
+	if GameManager.chatting == false:
+		health -= 20
 func poison():
 	debug.text = "poison"
-	for i in range(5):
-		health -= 2
-		await get_tree().create_timer(1).timeout
+	if GameManager.chatting == false:
+		for i in range(5):
+			health -= 4
+			await get_tree().create_timer(1).timeout
  
 func slow():
 	debug.text = "slow"
@@ -113,4 +115,4 @@ func stun():
 	debug.text = "stun"
 	SPEED = 0
 	await get_tree().create_timer(2.5).timeout
-	SPEED = 200
+	SPEED = 150
