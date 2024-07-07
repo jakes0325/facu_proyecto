@@ -28,6 +28,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Introduccion": "res://Dialogic/Timeline/Introduccion.dtl",
+"Introduccion_Bosque_Mente": "res://Dialogic/Timeline/Introduccion_Bosque_Mente.dtl",
 "PrimeraMision": "res://Dialogic/Timeline/PrimeraMision.dtl",
 "chat_cartel": "res://Dialogic/Timeline/chat_cartel.dtl"
 }
