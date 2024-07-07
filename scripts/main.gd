@@ -4,7 +4,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#if GameManager.game_first_loadin == true:
+	Dialogic.signal_event.connect(end_chatting)
+	if GameManager.game_first_loadin == true:
+		Dialogic.start("Introduccion")
+		GameManager.chatting = true
 		#$Player.position.x = GameManager.player_start_posx
 		#$Player.position.y = GameManager.player_start_posy
 	#elif GameManager.scene_name == "casa_cama":
@@ -35,7 +38,9 @@ func change_scene() -> void:
 			GameManager.game_first_loadin = false
 			GameManager.finish_changescene()
 
-
+func end_chatting(arg: String) -> void:
+	if arg == "end_chatting":
+		GameManager.chatting = false
 
 func _on_scene_trigger_forest_body_entered(body):
 	if body.is_in_group("player"):
