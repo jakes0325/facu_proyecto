@@ -10,9 +10,9 @@ var player_entered : bool = false:
 
 func _on_player_entered(body):
 	player_entered = true
+	end_battle.start()
 
 func transition():
 	if player_entered:
 		get_parent().change_state("5leaf")
-
 

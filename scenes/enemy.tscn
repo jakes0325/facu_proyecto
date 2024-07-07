@@ -78,5 +78,9 @@ script = ExtResource("8_dlci0")
 [node name="2leaf" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("9_75gm2")
 
+[node name="end_battle" type="Timer" parent="."]
+wait_time = 20.0
+
 [connection signal="timeout" from="speed" to="." method="_on_speed_timeout"]
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/idle" method="_on_player_entered"]
+[connection signal="timeout" from="end_battle" to="." method="_on_end_battle_timeout"]

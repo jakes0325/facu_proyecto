@@ -32,3 +32,9 @@ func end_chatting(arg: String) -> void:
 	if arg == "end_chatting":
 		GameManager.chatting = false
 		GameManager.bosque_mente_first_loadin = false
+
+
+func _on_enemy_end():
+	Dialogic.start("mensaje_final")
+	GameManager.chatting = true
+	GameManager.boss_killed = true

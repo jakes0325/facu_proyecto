@@ -1,4 +1,5 @@
 extends CharacterBody2D
+signal end
 
 var theta: float = 0.0
 @export_range(0,2*PI) var alpha: float = 0.0
@@ -22,3 +23,8 @@ func shoot(angle):
 
 func _on_speed_timeout():
 	shoot(theta)
+
+
+func _on_end_battle_timeout():
+	end.emit()
+	queue_free()
