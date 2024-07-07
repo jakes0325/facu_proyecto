@@ -1,8 +1,12 @@
 extends Node2D
 
+
+@onready var enemy = $enemy
+
 #var scene_name: String
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	enemy.end.connect(_on_enemy_end)
 	Dialogic.signal_event.connect(end_chatting)
 	if GameManager.bosque_mente_first_loadin == true:
 		Dialogic.start("Introduccion_Bosque_Mente")

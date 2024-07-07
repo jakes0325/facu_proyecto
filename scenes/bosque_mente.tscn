@@ -1228,4 +1228,3 @@ position = Vector2(543, 292)
 collision_layer = 1
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
-[connection signal="end" from="enemy" to="." method="_on_enemy_end"]
