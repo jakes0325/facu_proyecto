@@ -3,19 +3,20 @@ extends Node2D
 #var scene_name: String
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	
-	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	change_scene()
 
 
 func change_scene() -> void:
 	if GameManager.transition_scenes == true:
-		if GameManager.current_sceen == "house":
+		if GameManager.current_sceen == "forest":
 			get_tree().change_scene_to_file("res://scenes/"+GameManager.scene_name+".tscn")
-			GameManager.player_start_posx = 568
-			GameManager.player_start_posy = 71
+			GameManager.player_start_posx = 727
+			GameManager.player_start_posy = 319
 			GameManager.finish_changescene()
 
 
