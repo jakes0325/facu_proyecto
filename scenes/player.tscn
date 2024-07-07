@@ -161,3 +161,22 @@ animation = &"side_walk"
 frame = 3
 frame_progress = 0.658351
 offset = Vector2(0, -15)
+
+[node name="debug" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -56.0
+offset_right = 20.0
+offset_bottom = -33.0
+theme_override_font_sizes/font_size = 8
+text = "normal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = -29.0
+offset_top = -39.0
+offset_right = 171.0
+offset_bottom = -12.0
+scale = Vector2(0.294484, 0.286097)
+value = 100.0

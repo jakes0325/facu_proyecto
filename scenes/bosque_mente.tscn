@@ -1206,7 +1206,7 @@ y_sort_enabled = true
 position = Vector2(121, 49)
 
 [node name="camera" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node", "tilemap")]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 limit_right = 1088
@@ -1216,5 +1216,10 @@ position_smoothing_speed = 2.0
 script = ExtResource("5_tf28s")
 follow_node = NodePath("../Player")
 tilemap = NodePath("../TileMap")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1, 1, 0, 577, 1088, 576, 1087, 0, -28, 0, 1008, -67, 1212, 17, 1110, 650, -90, 602)
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]

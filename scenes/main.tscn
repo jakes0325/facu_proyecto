@@ -1226,6 +1226,7 @@ position = Vector2(567, 52)
 shape = SubResource("RectangleShape2D_8yqn8")
 
 [node name="Followcam" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node", "tilemap")]
+position = Vector2(418, 150)
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0

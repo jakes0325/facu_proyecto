@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://murrw012o8vm"]
+[gd_scene load_steps=8 format=3 uid="uid://murrw012o8vm"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_3l18p"]
 [ext_resource type="Texture2D" uid="uid://ba3674ui6u5ow" path="res://assets/bullet/16x16px/01.png" id="1_jgbj8"]
+[ext_resource type="Texture2D" uid="uid://cv61ra3mvj35b" path="res://assets/bullet/16x16px/03.png" id="2_pfgkn"]
+[ext_resource type="Texture2D" uid="uid://dgyxgcms5bdko" path="res://assets/bullet/16x16px/04.png" id="3_6wwua"]
+[ext_resource type="Texture2D" uid="uid://dddj3w75q0vk0" path="res://assets/bullet/16x16px/09.png" id="4_0rh8j"]
+[ext_resource type="Texture2D" uid="uid://drac4t3y3ly62" path="res://assets/bullet/16x16px/08.png" id="5_yd6en"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_708fd"]
 radius = 8.06226
 
 [node name="bullet" type="Area2D"]
 script = ExtResource("1_3l18p")
+texture_array = Array[Texture2D]([ExtResource("2_pfgkn"), ExtResource("3_6wwua"), ExtResource("4_0rh8j"), ExtResource("5_yd6en")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jgbj8")
@@ -17,4 +22,5 @@ texture = ExtResource("1_jgbj8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_708fd")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_screen_exited"]
