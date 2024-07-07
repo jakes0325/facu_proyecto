@@ -93,12 +93,12 @@ func player():
 	pass
 
 func fire():
-	debug.text = "fire"
 	if GameManager.chatting == false:
+		debug.text = "fire"
 		health -= 20
 func poison():
-	debug.text = "poison"
 	if GameManager.chatting == false:
+		debug.text = "poison"
 		for i in range(5):
 			health -= 4
 			await get_tree().create_timer(1).timeout
@@ -106,6 +106,8 @@ func poison():
 func slow():
 	debug.text = "slow"
 	SPEED = 100
+	await get_tree().create_timer(2).timeout
+	SPEED = 150
 
 func died():
 	GameManager.dead = true

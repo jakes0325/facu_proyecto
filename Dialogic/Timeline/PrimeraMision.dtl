@@ -1,7 +1,7 @@
 join Muladhara 1
 Muladhara: ¿Quién eres tú? ¿Cómo has entrado aquí?
 leave Muladhara
-join Yin 0
+join Yin 1
 Yin: Soy Yin, un espíritu guardián. He venido a ayudarte, Muladhara.
 leave Yin
 join Muladhara 1
