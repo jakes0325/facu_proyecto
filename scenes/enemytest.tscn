@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://l513bxa1yn7p"]
+
+[ext_resource type="PackedScene" uid="uid://c3cgu55lf8epk" path="res://scenes/enemy.tscn" id="1_mlddu"]
+
+[node name="enemytest" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_mlddu")]
+position = Vector2(559, 280)
+alpha = 0.075
+
+[node name="Camera2D" type="Camera2D" parent="enemy"]
+position = Vector2(1, 1)
+zoom = Vector2(3, 3)
