@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://l513bxa1yn7p"]
+[gd_scene load_steps=4 format=3 uid="uid://l513bxa1yn7p"]
 
 [ext_resource type="PackedScene" uid="uid://c3cgu55lf8epk" path="res://scenes/enemy.tscn" id="1_mlddu"]
+[ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="2_dln4y"]
+[ext_resource type="Script" path="res://scripts/Followcam.gd" id="3_yqxpx"]
 
 [node name="enemytest" type="Node2D"]
 
@@ -8,6 +10,9 @@
 position = Vector2(559, 280)
 alpha = 0.075
 
-[node name="Camera2D" type="Camera2D" parent="enemy"]
-position = Vector2(1, 1)
-zoom = Vector2(3, 3)
+[node name="Player" parent="." instance=ExtResource("2_dln4y")]
+position = Vector2(287, 425)
+
+[node name="Followcam" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node")]
+script = ExtResource("3_yqxpx")
+follow_node = NodePath("../Player")
