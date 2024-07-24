@@ -63,6 +63,7 @@ text/autocolor_names=true
 text/autoadvance_fixed_delay=2.0
 text/autoadvance_enabled=true
 text/autoadvance_per_word_delay=0
+text/autoskip_time_per_event=5.0
 
 [display]
 

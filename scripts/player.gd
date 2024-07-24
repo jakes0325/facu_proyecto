@@ -6,7 +6,7 @@ var  SPEED:int = 150
 @onready var debug = $debug
 @onready var progress_bar = $ProgressBar
 
-var health = 100:
+var health:int = 100:
 	set(value):
 		health = value
 		progress_bar.value = value
@@ -14,10 +14,11 @@ var health = 100:
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
+	$debug.set_visible(false)
 
 func _physics_process(delta):
 	player_movement(delta)
-	if health < 1:
+	if health <= 0:
 		died()
 
 func player_movement(delta) -> void:
@@ -94,27 +95,31 @@ func player():
 
 func fire():
 	if GameManager.chatting == false:
-		debug.text = "fire"
+		debug.text = "Quemado"
 		health -= 20
 func poison():
 	if GameManager.chatting == false:
-		debug.text = "poison"
+		debug.text = "Envenenado"
 		for i in range(5):
 			health -= 4
 			await get_tree().create_timer(1).timeout
  
 func slow():
-	debug.text = "slow"
+	debug.text = "Ralentizado"
 	SPEED = 100
 	await get_tree().create_timer(2).timeout
 	SPEED = 150
 
 func died():
 	GameManager.dead = true
-	queue_free() 
+	var dead_screen = preload("res://scenes/muerte.tscn").instantiate()
+	get_tree().root.add_child(dead_screen)
+	dead_screen.z_index = 100
+	get_tree().paused = true
+	#queue_free() 
 
 func stun():
-	debug.text = "stun"
+	debug.text = "Aturdido"
 	SPEED = 0
 	await get_tree().create_timer(2.5).timeout
 	SPEED = 150

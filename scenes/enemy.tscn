@@ -35,6 +35,7 @@ bullet_node = ExtResource("2_3ydhe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ctq65")
+frame_progress = 0.808281
 
 [node name="speed" type="Timer" parent="."]
 wait_time = 0.05
