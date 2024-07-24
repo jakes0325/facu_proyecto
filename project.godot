@@ -43,8 +43,8 @@ text/letter_speed=0.03
 text/initial_text_reveal_skippable=false
 text/text_reveal_skip_delay=1.0
 text/advance_delay=1.2
-text/autoadvance_per_character_delay=0.1
-text/autoadvance_ignored_characters_enabled=true
+text/autoadvance_per_character_delay=0
+text/autoadvance_ignored_characters_enabled=false
 animations/join_default_length=0.5
 animations/join_default_wait=true
 animations/leave_default_length=0.5
@@ -60,6 +60,9 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 <<<<<<<Updatedupstreamdirectories/dch_directory={}
 text/autocolor_names=true
+text/autoadvance_fixed_delay=2.0
+text/autoadvance_enabled=true
+text/autoadvance_per_word_delay=0
 
 [display]
 
