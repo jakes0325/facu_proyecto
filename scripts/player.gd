@@ -113,6 +113,8 @@ func slow():
 func died():
 	GameManager.dead = true
 	var dead_screen = preload("res://scenes/muerte.tscn").instantiate()
+	GameManager.transition_scenes = true
+	GameManager.scene_name = "muerte"
 	get_tree().root.add_child(dead_screen)
 	dead_screen.z_index = 100
 	get_tree().paused = true

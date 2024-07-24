@@ -42,6 +42,8 @@ func finish_changescene() -> void:
 			current_sceen = "world"
 		elif scene_name == "bosque_mente":
 			current_sceen = "forest"
+		elif scene_name == "muerte":
+			current_sceen = "muerte"
  
 
 
