@@ -5,7 +5,7 @@ var  SPEED:int = 150
 
 @onready var debug = $debug
 @onready var progress_bar = $ProgressBar
-
+@onready var camera = get_parent().find_child("camera")
 var health:int = 100:
 	set(value):
 		health = value
@@ -113,9 +113,12 @@ func slow():
 func died():
 	GameManager.dead = true
 	var dead_screen = preload("res://scenes/muerte.tscn").instantiate()
-	GameManager.transition_scenes = true
-	GameManager.scene_name = "muerte"
-	get_tree().root.add_child(dead_screen)
+	#get_tree().root.add_child(dead_screen)
+	get_parent().add_child(dead_screen)
+	var parent_size = self.get_viewport_rect().size
+	var child_size = dead_screen.get_viewport_rect().size
+	dead_screen.position = (parent_size - child_size) / 2
+	#dead_screen.global_position = camera.global_position
 	dead_screen.z_index = 100
 	get_tree().paused = true
 	#queue_free() 
