@@ -14,7 +14,6 @@ var health:int = 100:
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
-	$debug.set_visible(false)
 
 func _physics_process(delta):
 	if health <= 0:

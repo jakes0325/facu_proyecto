@@ -49,9 +49,6 @@ func exit_game() -> void:
 	pass
 	#TODO: AGREGAR FUNCIONES PARA SALIR DEL JUEGO
 
-func initialize_player_stats() -> void:
-	pass
-
 func set_new_scene(new_scene:String) -> void:
 	print("Escena para cambiar-> " + new_scene)
 	new_scene_setted = true
@@ -78,18 +75,5 @@ func change_scene()-> void:
 
 	new_scene_setted = false
 
-#Probablemente, remover esta funcion
-func finish_changescene() -> void:
-	#if transition_scenes == true: #este if creo q esta demas
-		new_scene_setted = false
-		if scene_name == "casa_cama":
-			current_scene = "house"
-		elif scene_name == "main":
-			current_scene = "world"
-		elif scene_name == "bosque_mente":
-			current_scene = "forest"
-		#elif scene_name == "muerte": 
-			#current_sceen = "muerte"
- 
 
 
