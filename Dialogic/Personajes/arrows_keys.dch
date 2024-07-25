@@ -1,0 +1,40 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "e_key",
+"description": "",
+"display_name": "",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"arrows": {
+"export_overrides": {
+"image": "\"res://assets/controls/arrowKeys-300x205.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(20, -200),
+"scale": 0.2,
+"scene": ""
+},
+"e_key": {
+"export_overrides": {
+"image": "\"res://assets/controls/e-butoon-hi.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(20, -200),
+"scale": 0.2,
+"scene": ""
+}
+},
+"scale": 0.5
+}
