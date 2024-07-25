@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://mkmo71jx6mgx"]
 
 [ext_resource type="Script" path="res://scripts/muladhara.gd" id="1_4ijpc"]
-[ext_resource type="Texture2D" uid="uid://cics3cd4i6le5" path="res://assets/Abuelasprite/abuela.png" id="1_kjhit"]
+[ext_resource type="Texture2D" uid="uid://deu7ddjqhi6xx" path="res://assets/Abuelasprite/fabioj-0002.png" id="2_qu1p4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5nikr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_kjhit")
+"texture": ExtResource("2_qu1p4")
 }],
 "loop": true,
 "name": &"default",
@@ -21,8 +21,8 @@ radius = 22.0227
 script = ExtResource("1_4ijpc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.5, -1)
-scale = Vector2(0.0194257, 0.0219595)
+position = Vector2(-0.5, -0.499999)
+scale = Vector2(0.0609375, 0.0671875)
 sprite_frames = SubResource("SpriteFrames_5nikr")
 
 [node name="ChatDetection" type="Area2D" parent="."]
