@@ -24,7 +24,8 @@ GameManager="*res://scripts/game_manager.gd"
 
 directories/dch_directory={
 "Muladhara": "res://Dialogic/Personajes/Muladhara.dch",
-"Yin": "res://Dialogic/Personajes/Yin.dch"
+"Yin": "res://Dialogic/Personajes/Yin.dch",
+"arrows_keys": "res://Dialogic/Personajes/arrows_keys.dch"
 }
 directories/dtl_directory={
 "Fin_Primera_Mision": "res://Dialogic/Timeline/Fin_Primera_Mision.dtl",
