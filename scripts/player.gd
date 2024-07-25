@@ -17,12 +17,16 @@ func _ready():
 	$debug.set_visible(false)
 
 func _physics_process(delta):
-	player_movement(delta)
 	if health <= 0:
-		died()
+		GameManager.dead = true
+	else:
+		player_movement(delta)
+
 
 func player_movement(delta) -> void:
-	if GameManager.chatting == false:
+	if GameManager.dead == true:
+		pass
+	elif GameManager.chatting == false:
 		if Input.is_action_pressed("ui_right"):
 			current_dir = "right"
 			play_anim(1)
@@ -112,16 +116,13 @@ func slow():
 
 func died():
 	GameManager.dead = true
-	var dead_screen = preload("res://scenes/muerte.tscn").instantiate()
-	#get_tree().root.add_child(dead_screen)
-	get_parent().add_child(dead_screen)
+	var dead_screen = preload("res://scenes/dead_screen.tscn").instantiate()
+	get_tree().root.add_child(dead_screen)
 	var parent_size = self.get_viewport_rect().size
 	var child_size = dead_screen.get_viewport_rect().size
 	dead_screen.position = (parent_size - child_size) / 2
-	#dead_screen.global_position = camera.global_position
 	dead_screen.z_index = 100
-	get_tree().paused = true
-	#queue_free() 
+	dead_screen.focus_mode = Control.FOCUS_ALL
 
 func stun():
 	debug.text = "Aturdido"

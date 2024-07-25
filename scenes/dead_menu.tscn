@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bex4b5nguujlb"]
 
-[ext_resource type="Script" path="res://scripts/muerte.gd" id="1_rq474"]
+[ext_resource type="Script" path="res://scripts/dead_menu.gd" id="1_wgyoc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu7be"]
 bg_color = Color(0.0807833, 0.0807834, 0.0807833, 0.45098)
 
-[node name="Muerte" type="Control"]
+[node name="dead_menu" type="Control"]
 custom_minimum_size = Vector2(1088, 576)
 layout_direction = 1
 layout_mode = 3
@@ -16,7 +16,7 @@ offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource("1_rq474")
+script = ExtResource("1_wgyoc")
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -55,6 +55,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 14
+action_mode = 0
 text = "VOLVER A JUGAR"
 
 [node name="BtnMenu" type="Button" parent="PanelContainer/MarginContainer/BoxContainer2"]
@@ -62,6 +63,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
+action_mode = 0
 text = "SALIR"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/BoxContainer2/BtnPlayAgain" to="." method="_on_button_pressed"]
