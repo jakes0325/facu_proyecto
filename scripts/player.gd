@@ -18,7 +18,7 @@ func _ready():
 
 func _physics_process(delta):
 	if health <= 0:
-		GameManager.dead = true
+		died()
 	else:
 		player_movement(delta)
 
@@ -116,13 +116,14 @@ func slow():
 
 func died():
 	GameManager.dead = true
-	var dead_screen = preload("res://scenes/dead_screen.tscn").instantiate()
-	get_tree().root.add_child(dead_screen)
-	var parent_size = self.get_viewport_rect().size
-	var child_size = dead_screen.get_viewport_rect().size
-	dead_screen.position = (parent_size - child_size) / 2
-	dead_screen.z_index = 100
-	dead_screen.focus_mode = Control.FOCUS_ALL
+	GameManager.set_new_scene("dead_menu")
+	#var dead_screen = preload("res://scenes/dead_menu.tscn").instantiate()
+	#get_tree().root.add_child(dead_screen)
+	#var parent_size = self.get_viewport_rect().size
+	#var child_size = dead_screen.get_viewport_rect().size
+	#dead_screen.position = (parent_size - child_size) / 2
+	#dead_screen.z_index = 100
+	#dead_screen.focus_mode = Control.FOCUS_ALL
 
 func stun():
 	debug.text = "Aturdido"

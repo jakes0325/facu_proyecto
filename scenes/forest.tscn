@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cq0cp616sk8k5"]
+[gd_scene load_steps=12 format=3 uid="uid://daayxpt62vdar"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_5yxm6"]
 [ext_resource type="Script" path="res://scripts/forest.gd" id="1_xlipr"]

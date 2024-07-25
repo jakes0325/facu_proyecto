@@ -36,10 +36,12 @@ func start_game() -> void:
 	#TODO: RENDERIZAR EL MAPA PRINCIPAL/INICIO DEL JUEGO
 
 func play_again() -> void:
+	start_game()
 	pass
 	#TODO: AGREGAR FUNCIONES PARA RECEPCIONAR SEÑAL DE VOLVER A JUGAR
 
 func back_to_menu() -> void:
+	set_new_scene("main_menu")
 	pass
 	#TODO: AGREGAR FUNCIONES PARA VOLVER AL MENU PRINCIPAL
 
@@ -51,9 +53,11 @@ func initialize_player_stats() -> void:
 	pass
 
 func set_new_scene(new_scene:String) -> void:
+	print("Escena para cambiar-> " + new_scene)
 	new_scene_setted = true
 	changed_scene = get_tree().current_scene.name
 	current_scene = new_scene
+
 func change_scene()-> void:
 	get_tree().change_scene_to_file("res://scenes/" + current_scene + ".tscn")
 	match current_scene:

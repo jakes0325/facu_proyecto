@@ -8,7 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if GameManager.new_scene_setted:
+		GameManager.change_scene()
 
 func _on_button_pressed():
 	print("JUGAR DE NUEVO")
