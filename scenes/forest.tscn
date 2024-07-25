@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cq0cp616sk8k5"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_5yxm6"]
-[ext_resource type="Script" path="res://scripts/bosque_mente.gd" id="1_xlipr"]
+[ext_resource type="Script" path="res://scripts/forest.gd" id="1_xlipr"]
 [ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="2_j2wtm"]
 [ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="3_2knrg"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="4_cgpfw"]
@@ -1181,7 +1181,7 @@ sources/1 = SubResource("TileSetAtlasSource_5ynro")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opnd8"]
 size = Vector2(29.875, 20)
 
-[node name="bosque_mente" type="Node2D"]
+[node name="forest" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_xlipr")
 

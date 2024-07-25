@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnot35aoacf0v"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_m2bi5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu7be"]
+bg_color = Color(0.0807833, 0.0807834, 0.0807833, 0.45098)
+
+[node name="main_menu" type="Control"]
+custom_minimum_size = Vector2(1088, 576)
+layout_direction = 1
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.998457
+offset_right = -64.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_m2bi5")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wu7be")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="BoxContainer2" type="BoxContainer" parent="PanelContainer/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
+alignment = 1
+vertical = true
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/BoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.596078, 0.568627, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 52
+text = "YIN GAME"
+horizontal_alignment = 1
+
+[node name="BtnPlay" type="Button" parent="PanelContainer/MarginContainer/BoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "JUGAR"
+
+[node name="BtnExit" type="Button" parent="PanelContainer/MarginContainer/BoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "SALIR"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/BoxContainer2/BtnPlay" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/BoxContainer2/BtnExit" to="." method="_on_button_2_pressed"]

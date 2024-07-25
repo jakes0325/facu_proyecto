@@ -4,16 +4,17 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.grab_focus()
-	$PanelContainer/MarginContainer/BoxContainer2/BtnPlay
+	$PanelContainer/MarginContainer/BoxContainer2/BtnPlay.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if GameManager.new_scene_setted:
+		GameManager.change_scene()
 
 func _on_button_pressed():
-	print("JUGAR DE NUEVO")
-	GameManager.play_again()
+	print("INICIAR JUEGO")
+	GameManager.start_game()
 
 func _on_button_2_pressed():
-	print("MENU PRINCIPAL")
-	GameManager.back_to_menu()
+	print("SALIR")
+	GameManager.exit_game()

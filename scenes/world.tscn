@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://igsra1k50xs4"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_5sjkm"]
-[ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
-[ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
-[ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="2_xjlam"]
-[ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
-[ext_resource type="Script" path="res://scripts/Followcam.gd" id="5_fcs5j"]
-[ext_resource type="Script" path="res://scripts/cartel_chat.gd" id="7_mr7fr"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_3lehs"]
+[ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="2_sm7u2"]
+[ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="3_cbdci"]
+[ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="4_bcmry"]
+[ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="5_r15ar"]
+[ext_resource type="Script" path="res://scripts/Followcam.gd" id="6_o6hqv"]
+[ext_resource type="Script" path="res://scripts/cartel_chat.gd" id="7_0hvjd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
-texture = ExtResource("1_byxwv")
+texture = ExtResource("2_sm7u2")
 0:3/0 = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:3/0/physics_layer_0/angular_velocity = 0.0
@@ -374,7 +374,7 @@ texture = ExtResource("1_byxwv")
 3:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ynro"]
-texture = ExtResource("2_xjlam")
+texture = ExtResource("3_cbdci")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1199,9 +1199,9 @@ size = Vector2(24, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wg3yr"]
 size = Vector2(23.5, 24.5)
 
-[node name="main" type="Node2D"]
+[node name="world" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_5sjkm")
+script = ExtResource("1_3lehs")
 
 [node name="TileMap" type="TileMap" parent="."]
 self_modulate = Color(0.0901961, 0.211765, 0.392157, 1)
@@ -1216,10 +1216,10 @@ layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(196634, 2031616, 3, 262161, 2031616, 3, 327689, 2031616, 3, 131117, 2031616, 3, 1245198, 2097152, 1, 1245211, 2097152, 1, 1245217, 2097152, 1, 1245227, 2097152, 1, 65571, 393216, 0, 393276, 1769472, 4, 131104, 851968, 5, 720950, 1835008, 6, 458801, 1703936, 4, 458806, 1441792, 9, 196662, 1835008, 4, 458795, 2293760, 2)
 
-[node name="Player" parent="." instance=ExtResource("1_fyb5w")]
+[node name="Player" parent="." instance=ExtResource("4_bcmry")]
 position = Vector2(494, 135)
 
-[node name="SceneTrigger_house" parent="." instance=ExtResource("3_iyrlh")]
+[node name="SceneTrigger_house" parent="." instance=ExtResource("5_r15ar")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger_house"]
 position = Vector2(567, 52)
@@ -1234,7 +1234,7 @@ limit_right = 1039
 limit_bottom = 336
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
-script = ExtResource("5_fcs5j")
+script = ExtResource("6_o6hqv")
 follow_node = NodePath("../Player")
 tilemap = NodePath("../TileMap")
 
@@ -1281,7 +1281,7 @@ color = Color(0.870588, 0.188235, 0, 1)
 energy = 5.11
 texture = SubResource("GradientTexture2D_vwney")
 
-[node name="SceneTrigger_forest" parent="." instance=ExtResource("3_iyrlh")]
+[node name="SceneTrigger_forest" parent="." instance=ExtResource("5_r15ar")]
 position = Vector2(729, 324)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger_forest"]
@@ -1290,7 +1290,7 @@ shape = SubResource("RectangleShape2D_qc30s")
 
 [node name="cartel_chat" type="Area2D" parent="."]
 position = Vector2(696, 122)
-script = ExtResource("7_mr7fr")
+script = ExtResource("7_0hvjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cartel_chat"]
 position = Vector2(-1, 0)

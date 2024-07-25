@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://yjr01cpeaxmr"]
 
 [ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="1_gsgb4"]
-[ext_resource type="Script" path="res://scripts/casa_cama.gd" id="1_khjxr"]
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_khjxr"]
 [ext_resource type="Script" path="res://scripts/Followcam.gd" id="2_evbbx"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="4_7p33f"]
 [ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="5_brgdr"]
@@ -357,7 +357,7 @@ sources/0 = SubResource("TileSetAtlasSource_ltjsb")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htrc7"]
 size = Vector2(32, 12)
 
-[node name="casa_cama" type="Node2D"]
+[node name="house" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_khjxr")
 
