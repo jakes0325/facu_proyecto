@@ -13,7 +13,7 @@ const vida_inicial = 100
 const world_start_pos_x = 122
 const world_start_pos_y = 155
 const house_start_pos_x = 568
-const house_start_pos_y = 71
+const house_start_pos_y = 75
 const forest_start_pos_x = 727
 const forest_start_pos_y = 319
 
@@ -36,13 +36,15 @@ func start_game() -> void:
 	#TODO: RENDERIZAR EL MAPA PRINCIPAL/INICIO DEL JUEGO
 
 func play_again() -> void:
+	boss_killed = false
+	dead = false
+	game_first_loadin = true
+	bosque_mente_first_loadin = true
 	start_game()
-	pass
 	#TODO: AGREGAR FUNCIONES PARA RECEPCIONAR SEÑAL DE VOLVER A JUGAR
 
 func back_to_menu() -> void:
 	set_new_scene("main_menu")
-	pass
 	#TODO: AGREGAR FUNCIONES PARA VOLVER AL MENU PRINCIPAL
 
 func exit_game() -> void:
