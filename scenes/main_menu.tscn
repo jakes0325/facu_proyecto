@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://2oxg46vtxhrw"]
+[gd_scene load_steps=3 format=3 uid="uid://dnot35aoacf0v"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_m2bi5"]
 
@@ -6,13 +6,12 @@
 bg_color = Color(0.0807833, 0.0807834, 0.0807833, 0.45098)
 
 [node name="main_menu" type="Control"]
-custom_minimum_size = Vector2(1088, 576)
+custom_minimum_size = Vector2(1152, 648)
 layout_direction = 1
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.998457
-offset_right = -64.0
-offset_bottom = -71.0
+offset_bottom = 0.999878
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
