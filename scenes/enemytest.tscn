@@ -13,6 +13,5 @@ alpha = 0.075
 [node name="Player" parent="." instance=ExtResource("2_dln4y")]
 position = Vector2(287, 425)
 
-[node name="Followcam" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node")]
+[node name="Followcam" type="Camera2D" parent="."]
 script = ExtResource("3_yqxpx")
-follow_node = NodePath("../Player")

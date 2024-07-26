@@ -1204,6 +1204,9 @@ size = Vector2(23.5, 24.5)
 y_sort_enabled = true
 script = ExtResource("1_3lehs")
 
+[node name="Player" parent="." instance=ExtResource("4_bcmry")]
+position = Vector2(494, 135)
+
 [node name="TileMap" type="TileMap" parent="."]
 self_modulate = Color(0.0901961, 0.211765, 0.392157, 1)
 y_sort_enabled = true
@@ -1217,16 +1220,13 @@ layer_2/name = "ysort"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(196634, 2031616, 3, 262161, 2031616, 3, 327689, 2031616, 3, 131117, 2031616, 3, 1245198, 2097152, 1, 1245211, 2097152, 1, 1245217, 2097152, 1, 1245227, 2097152, 1, 65571, 393216, 0, 393276, 1769472, 4, 131104, 851968, 5, 720950, 1835008, 6, 458801, 1703936, 4, 458806, 1441792, 9, 196662, 1835008, 4, 458795, 2293760, 2)
 
-[node name="Player" parent="." instance=ExtResource("4_bcmry")]
-position = Vector2(494, 135)
-
 [node name="SceneTrigger_house" parent="." instance=ExtResource("5_r15ar")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger_house"]
 position = Vector2(567, 52)
 shape = SubResource("RectangleShape2D_8yqn8")
 
-[node name="Followcam" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node", "tilemap")]
+[node name="Followcam" type="Camera2D" parent="."]
 position = Vector2(418, 150)
 zoom = Vector2(3, 3)
 limit_left = 0
@@ -1236,8 +1236,6 @@ limit_bottom = 336
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("6_o6hqv")
-follow_node = NodePath("../Player")
-tilemap = NodePath("../TileMap")
 
 [node name="collision" type="StaticBody2D" parent="."]
 

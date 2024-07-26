@@ -1207,7 +1207,7 @@ shape = SubResource("RectangleShape2D_opnd8")
 y_sort_enabled = true
 position = Vector2(121, 49)
 
-[node name="camera" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node", "tilemap")]
+[node name="camera" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
@@ -1216,8 +1216,6 @@ limit_bottom = 576
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("5_tf28s")
-follow_node = NodePath("../Player")
-tilemap = NodePath("../TileMap")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
