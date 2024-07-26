@@ -17,7 +17,7 @@
 "portraits": {
 "arrows": {
 "export_overrides": {
-"image": "\"res://assets/controls/arrowKeys-300x205.png\""
+"image": "\"res://assets/controls/mod-wasd_2.png\""
 },
 "ignore_char_scale": false,
 "mirror": false,

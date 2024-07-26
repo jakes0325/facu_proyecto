@@ -26,7 +26,7 @@ func _physics_process(delta):
 		player_movement(delta)
 		var mouse_pos = get_global_mouse_position()
 		$Marker2D.look_at(mouse_pos)
-		if Input.is_action_just_pressed("click_izquierdo") and shoot_cooldown == true:
+		if conditions_to_shoot():
 			shoot_cooldown = false
 			var bullet = bullet_path.instantiate()
 			bullet.rotation = $Marker2D.rotation
@@ -34,10 +34,15 @@ func _physics_process(delta):
 			bullet.add_to_group("player_bullet")
 			add_child(bullet)
 			
-			await get_tree().create_timer(0.7)
+			await get_tree().create_timer(0.5).timeout
 			shoot_cooldown = true
 		
 
+func conditions_to_shoot() -> bool:
+	if Input.is_action_just_pressed("click_izquierdo") and shoot_cooldown == true and GameManager.chatting == false:
+		return true
+	else:
+		return false
 
 func player_movement(delta) -> void:
 	if GameManager.dead == true:

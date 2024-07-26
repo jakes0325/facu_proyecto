@@ -3,7 +3,7 @@ Yin: Nuestra protagonista se llama Yin. una chica mitad gato y mitad humana. con
 leave Yin [animation="Fade In Out"]
 INTRUCCIONES DEL JUEGO
 join arrows_keys (arrows) 2
-arrows_keys (arrows): (* Moverse con la flechas del teclado)
+arrows_keys (arrows): (* Moverse con las teclas WASD)
 leave arrows_keys
 join arrows_keys (e_key) 2
 arrows_keys (e_key): (* y para interactuar con el/los npc)
