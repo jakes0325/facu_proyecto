@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://igsra1k50xs4"]
+[gd_scene load_steps=18 format=3 uid="uid://igsra1k50xs4"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_3lehs"]
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="2_sm7u2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="5_r15ar"]
 [ext_resource type="Script" path="res://scripts/Followcam.gd" id="6_o6hqv"]
 [ext_resource type="Script" path="res://scripts/cartel_chat.gd" id="7_0hvjd"]
+[ext_resource type="AudioStream" uid="uid://ci61iie01r12j" path="res://assets/songs/TownTheme.mp3" id="8_i1r0l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
 texture = ExtResource("2_sm7u2")
@@ -1295,6 +1296,10 @@ script = ExtResource("7_0hvjd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cartel_chat"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_wg3yr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_i1r0l")
+autoplay = true
 
 [connection signal="body_entered" from="SceneTrigger_house" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger_forest" to="." method="_on_scene_trigger_forest_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnot35aoacf0v"]
+[gd_scene load_steps=4 format=3 uid="uid://dnot35aoacf0v"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_m2bi5"]
+[ext_resource type="AudioStream" uid="uid://bvo8s1l788bay" path="res://assets/songs/awesomeness.wav" id="2_qu5c1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu7be"]
 bg_color = Color(0.0807833, 0.0807834, 0.0807833, 0.45098)
@@ -63,6 +64,11 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "SALIR"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qu5c1")
+volume_db = -14.857
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/BoxContainer2/BtnPlay" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/BoxContainer2/BtnExit" to="." method="_on_button_2_pressed"]

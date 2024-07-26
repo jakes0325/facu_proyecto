@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://daayxpt62vdar"]
+[gd_scene load_steps=13 format=3 uid="uid://daayxpt62vdar"]
 
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_5yxm6"]
 [ext_resource type="Script" path="res://scripts/forest.gd" id="1_xlipr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="4_cgpfw"]
 [ext_resource type="Script" path="res://scripts/Followcam.gd" id="5_tf28s"]
 [ext_resource type="PackedScene" uid="uid://c3cgu55lf8epk" path="res://scenes/enemy.tscn" id="7_y8jyp"]
+[ext_resource type="AudioStream" uid="uid://cckdwt73en00e" path="res://assets/songs/Heroic Demise (New).mp3" id="8_hvmxn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
 texture = ExtResource("1_5yxm6")
@@ -1226,5 +1227,9 @@ polygon = PackedVector2Array(-1, 1, 0, 577, 1088, 576, 1087, 0, -28, 0, 1008, -6
 [node name="enemy" parent="." instance=ExtResource("7_y8jyp")]
 position = Vector2(543, 292)
 collision_layer = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hvmxn")
+autoplay = true
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
