@@ -1,7 +1,8 @@
 class_name camera extends Camera2D
 
-#@export var follow_node: Node2D
-@onready var follow_node = owner.find_child("Player")
+@export var follow_node: Node2D
+@export var tilemap: TileMap
+
 func _ready():
 	#var mapRect = tilemap.get_used_rect()
 	#var tileSize = tilemap.rendering_quadrant_size
@@ -13,5 +14,4 @@ func _ready():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if GameManager.dead == false: 
-		global_position = follow_node.global_position
+	global_position = follow_node.global_position

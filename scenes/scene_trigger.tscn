@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b86dxfulukk4o"]
+[gd_scene format=3 uid="uid://b2sswpfjswqm5"]
 
 [node name="SceneTrigger" type="Area2D"]
 collision_layer = 0

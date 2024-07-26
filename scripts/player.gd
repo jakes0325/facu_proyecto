@@ -1,69 +1,32 @@
 extends CharacterBody2D
 
 var current_dir: String = "down"
-var  SPEED:int = 150
-
-@onready var debug = $debug
-@onready var progress_bar = $ProgressBar
-@onready var camera = get_parent().find_child("camera")
-
-var shoot_cooldown = true
-var bullet_path = preload("res://scenes/bullet_player.tscn")
-
-var health:int = 100:
-	set(value):
-		health = value
-		progress_bar.value = value
-
+const  SPEED: int = 100
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
 func _physics_process(delta):
-	if health <= 0:
-		died()
-	else:
-		player_movement(delta)
-		var mouse_pos = get_global_mouse_position()
-		$Marker2D.look_at(mouse_pos)
-		if conditions_to_shoot():
-			shoot_cooldown = false
-			var bullet = bullet_path.instantiate()
-			bullet.rotation = $Marker2D.rotation
-			bullet.global_position = $Marker2D.global_position
-			bullet.add_to_group("player_bullet")
-			add_child(bullet)
-			
-			await get_tree().create_timer(0.5).timeout
-			shoot_cooldown = true
-		
-
-func conditions_to_shoot() -> bool:
-	if Input.is_action_just_pressed("click_izquierdo") and shoot_cooldown == true and GameManager.chatting == false:
-		return true
-	else:
-		return false
+	player_movement(delta)
 
 func player_movement(delta) -> void:
-	if GameManager.dead == true:
-		pass
-	elif GameManager.chatting == false:
-		if Input.is_action_pressed("derecha"):
+	if GameManager.chatting == false:
+		if Input.is_action_pressed("ui_right"):
 			current_dir = "right"
 			play_anim(1)
 			velocity.x = SPEED
 			velocity.y = 0
-		elif Input.is_action_pressed("izquierda"):
+		elif Input.is_action_pressed("ui_left"):
 			current_dir = "left"
 			play_anim(1)
 			velocity.x = -SPEED
 			velocity.y = 0
-		elif Input.is_action_pressed("abajo"):
+		elif Input.is_action_pressed("ui_down"):
 			current_dir = "down"
 			play_anim(1)
 			velocity.y = SPEED
 			velocity.x = 0
-		elif Input.is_action_pressed("arriba"):
+		elif Input.is_action_pressed("ui_up"):
 			current_dir = "up"
 			play_anim(1)
 			velocity.y = -SPEED
@@ -103,51 +66,5 @@ func play_anim(movement) -> void:
 			elif movement == 0:
 				anim.play("back_idle")
 
-
-func set_status(bullet_type):
-		match bullet_type:
-			0:
-				fire()
-			1:
-				poison()
-			2:
-				slow()
-			3:
-				stun()
-
 func player():
 	pass
-
-func fire():
-	if GameManager.chatting == false:
-		debug.text = "Quemado"
-		health -= 20
-func poison():
-	if GameManager.chatting == false:
-		debug.text = "Envenenado"
-		for i in range(5):
-			health -= 4
-			await get_tree().create_timer(1).timeout
- 
-func slow():
-	debug.text = "Ralentizado"
-	SPEED = 100
-	await get_tree().create_timer(2).timeout
-	SPEED = 150
-
-func died():
-	GameManager.dead = true
-	GameManager.set_new_scene("dead_menu")
-	#var dead_screen = preload("res://scenes/dead_menu.tscn").instantiate()
-	#get_tree().root.add_child(dead_screen)
-	#var parent_size = self.get_viewport_rect().size
-	#var child_size = dead_screen.get_viewport_rect().size
-	#dead_screen.position = (parent_size - child_size) / 2
-	#dead_screen.z_index = 100
-	#dead_screen.focus_mode = Control.FOCUS_ALL
-
-func stun():
-	debug.text = "Aturdido"
-	SPEED = 0
-	await get_tree().create_timer(2.5).timeout
-	SPEED = 150
