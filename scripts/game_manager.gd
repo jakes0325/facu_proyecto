@@ -48,7 +48,7 @@ func back_to_menu() -> void:
 	#TODO: AGREGAR FUNCIONES PARA VOLVER AL MENU PRINCIPAL
 
 func exit_game() -> void:
-	pass
+	get_tree().quit()
 	#TODO: AGREGAR FUNCIONES PARA SALIR DEL JUEGO
 
 func set_new_scene(new_scene:String) -> void:
