@@ -134,5 +134,6 @@ shape = SubResource("CircleShape2D_6ekfx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgs0s")
-animation = &"side_walk"
+animation = &"side_idle"
+frame_progress = 0.0280242
 offset = Vector2(0, -15)
