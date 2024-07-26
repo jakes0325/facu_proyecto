@@ -1,0 +1,11 @@
+join Yin 2 [animation="Fade In Out" mirrored="true"]
+Yin: Nuestra protagonista se llama Yin. una chica mitad gato y mitad humana. con una habilidad de transportarse a un plano astral, con el fin de ayudar a los demas
+leave Yin [animation="Fade In Out"]
+INTRUCCIONES DEL JUEGO
+join arrows_keys (arrows) 2
+arrows_keys (arrows): (* Moverse con las teclas WASD)
+leave arrows_keys
+join arrows_keys (e_key) 2
+arrows_keys (e_key): (* y para interactuar con el/los npc)
+leave --All--
+[signal arg="end_chatting"]

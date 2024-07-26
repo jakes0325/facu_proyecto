@@ -10,8 +10,10 @@ func _ready():
 func _process(delta):
 	if player_in_area:
 		if Input.is_action_just_pressed("e") and GameManager.chatting == false:
-			run_dialogue("PrimeraMision")
-			
+			if GameManager.boss_killed == false:
+				run_dialogue("PrimeraMision")
+			elif GameManager.boss_killed == true:
+				run_dialogue("Fin_Primera_Mision")
 			
 
 func run_dialogue(dialogue_string):

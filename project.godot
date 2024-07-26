@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="game_"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,22 +24,28 @@ GameManager="*res://scripts/game_manager.gd"
 
 directories/dch_directory={
 "Muladhara": "res://Dialogic/Personajes/Muladhara.dch",
-"Yin": "res://Dialogic/Personajes/Yin.dch"
+"Yin": "res://Dialogic/Personajes/Yin.dch",
+"arrows_keys": "res://Dialogic/Personajes/arrows_keys.dch"
 }
 directories/dtl_directory={
-"PrimeraMision": "res://Dialogic/Timeline/PrimeraMision.dtl"
+"Fin_Primera_Mision": "res://Dialogic/Timeline/Fin_Primera_Mision.dtl",
+"Introduccion": "res://Dialogic/Timeline/Introduccion.dtl",
+"Introduccion_Bosque_Mente": "res://Dialogic/Timeline/Introduccion_Bosque_Mente.dtl",
+"PrimeraMision": "res://Dialogic/Timeline/PrimeraMision.dtl",
+"chat_cartel": "res://Dialogic/Timeline/chat_cartel.dtl",
+"mensaje_final": "res://Dialogic/Timeline/mensaje_final.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style="Default"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
-text/initial_text_reveal_skippable=true
-text/text_reveal_skip_delay=0.1
-text/advance_delay=0.1
-text/autoadvance_per_character_delay=0.1
-text/autoadvance_ignored_characters_enabled=true
+text/letter_speed=0.03
+text/initial_text_reveal_skippable=false
+text/text_reveal_skip_delay=1.0
+text/advance_delay=1.2
+text/autoadvance_per_character_delay=0
+text/autoadvance_ignored_characters_enabled=false
 animations/join_default_length=0.5
 animations/join_default_wait=true
 animations/leave_default_length=0.5
@@ -54,6 +60,11 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 <<<<<<<Updatedupstreamdirectories/dch_directory={}
+text/autocolor_names=true
+text/autoadvance_fixed_delay=2.0
+text/autoadvance_enabled=true
+text/autoadvance_per_word_delay=0
+text/autoskip_time_per_event=5.0
 
 [display]
 
@@ -77,6 +88,31 @@ dialogic_default_action={
 e={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
+]
+}
+derecha={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+]
+}
+izquierda={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
+]
+}
+abajo={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
+]
+}
+arriba={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
+]
+}
+click_izquierdo={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(186, 15),"global_position":Vector2(190, 56),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
