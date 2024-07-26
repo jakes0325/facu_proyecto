@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3jbd08qr00ey" path="res://assets/tilemap_proyecto/Overworld.png" id="1_byxwv"]
 [ext_resource type="PackedScene" uid="uid://cutvpwpn4f1s8" path="res://scenes/player.tscn" id="1_fyb5w"]
 [ext_resource type="Texture2D" uid="uid://cdupgx670qowa" path="res://assets/tilemap_proyecto/Inner.png" id="2_xjlam"]
-[ext_resource type="PackedScene" uid="uid://b2sswpfjswqm5" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
+[ext_resource type="PackedScene" uid="uid://b86dxfulukk4o" path="res://scenes/scene_trigger.tscn" id="3_iyrlh"]
 [ext_resource type="Script" path="res://scripts/Followcam.gd" id="5_fcs5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p77d"]
