@@ -7,8 +7,9 @@ var direction = Vector2.RIGHT
 var bullet_type: int = 0
 
 
+
 func _physics_process(delta):
-	position += direction * speed * delta
+	position += (direction * speed).rotated(rotation) * delta
 
 
 func set_property(type):

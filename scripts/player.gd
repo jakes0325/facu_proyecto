@@ -6,6 +6,10 @@ var  SPEED:int = 150
 @onready var debug = $debug
 @onready var progress_bar = $ProgressBar
 @onready var camera = get_parent().find_child("camera")
+
+var shoot_cooldown = true
+var bullet_path = preload("res://scenes/bullet_player.tscn")
+
 var health:int = 100:
 	set(value):
 		health = value
@@ -20,28 +24,41 @@ func _physics_process(delta):
 		died()
 	else:
 		player_movement(delta)
+		var mouse_pos = get_global_mouse_position()
+		$Marker2D.look_at(mouse_pos)
+		if Input.is_action_just_pressed("click_izquierdo") and shoot_cooldown == true:
+			shoot_cooldown = false
+			var bullet = bullet_path.instantiate()
+			bullet.rotation = $Marker2D.rotation
+			bullet.global_position = $Marker2D.global_position
+			bullet.add_to_group("player_bullet")
+			add_child(bullet)
+			
+			await get_tree().create_timer(0.7)
+			shoot_cooldown = true
+		
 
 
 func player_movement(delta) -> void:
 	if GameManager.dead == true:
 		pass
 	elif GameManager.chatting == false:
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("derecha"):
 			current_dir = "right"
 			play_anim(1)
 			velocity.x = SPEED
 			velocity.y = 0
-		elif Input.is_action_pressed("ui_left"):
+		elif Input.is_action_pressed("izquierda"):
 			current_dir = "left"
 			play_anim(1)
 			velocity.x = -SPEED
 			velocity.y = 0
-		elif Input.is_action_pressed("ui_down"):
+		elif Input.is_action_pressed("abajo"):
 			current_dir = "down"
 			play_anim(1)
 			velocity.y = SPEED
 			velocity.x = 0
-		elif Input.is_action_pressed("ui_up"):
+		elif Input.is_action_pressed("arriba"):
 			current_dir = "up"
 			play_anim(1)
 			velocity.y = -SPEED

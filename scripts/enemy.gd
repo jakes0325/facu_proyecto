@@ -3,7 +3,12 @@ signal end
 
 var theta: float = 0.0
 @export_range(0,2*PI) var alpha: float = 0.0
-
+@onready var progress_bar = $ProgressBar
+var health:int = 500:
+	set(value):
+		health = value
+		progress_bar.value = value
+		
 @export var bullet_node:PackedScene
 var bullet_type: int = 0
 
@@ -25,6 +30,15 @@ func _on_speed_timeout():
 	shoot(theta)
 
 
-func _on_end_battle_timeout():
+func _on_end_battle():
 	end.emit()
 	queue_free()
+
+
+func _on_hit_box_body_entered(body):
+	print(health)
+	if body.is_in_group("player_bullet"):
+		health -= 25
+		print("recibe daño")
+	else :
+		print("no estira bullet")
